@@ -370,7 +370,7 @@
             reset() { this.player = new Player(); this.bullets = []; this.enemies = []; this.particles = []; this.score = 0; this.level = 1; this.spawnTimer = 0; this.spawnInterval = 1.2; this.state = 'menu'; this.high = getHigh(); }
             start() { this.reset(); this.state = 'running'; overlay.style.display = 'none'; this.player.lives = 3; this.level = 1 }
             gameOver() {
-                this.state = 'over'; overlay.style.display = 'flex'; menu.innerHTML = `<div class=menu><h1>Game Over</h1><p>Your score ${this.score}</p><div style="display:flex;gap:10px;justify-content:center;margin-top:12px"><button class='btn primary' id='restart'>Restart</button><button class='btn' id='menuBtn'><a href="chemistry.html">Go Back</a></button></div></div>`;
+                this.state = 'over'; overlay.style.display = 'flex'; menu.innerHTML = `<div class=menu><h1>Game Over</h1><p>Your score ${this.score}</p><div style="display:flex;gap:10px;justify-content:center;margin-top:12px"><button class='btn primary' id='restart'>Restart</button><button class='btn' id='menuBtn'><a href="Chemistry.html">Go Back</a></button></div></div>`;
 
                 if (this.score > this.high) { this.high = this.score; setHigh(this.high); menu.querySelector('#restart')?.focus(); }
                 document.getElementById('menu').querySelector('#restart')?.addEventListener('click', () => { this.start() });
@@ -488,5 +488,6 @@
 
     </script>
 </body>
+
 
 </html>
